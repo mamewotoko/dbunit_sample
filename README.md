@@ -8,10 +8,22 @@ Build and test
 ant clean build test
 ```
 
+MySQL: boot2docker container
+----------------------------
+1. install boot2docker
+2. read and follow instructions in etc/docker/README.md
+
 MySQL JDBC sample
 -----------------
-sh etc/initialize_db.sh
+1. edit build.xml to change MySQL host address(HOST)
+```
+<jvmarg value="-DHOST=192.168.59.103" /> 
+``` 
+2.
+```bash
+# sh etc/initialize_db.sh
 ant build runjdbc
+```
 
 output
 ```
