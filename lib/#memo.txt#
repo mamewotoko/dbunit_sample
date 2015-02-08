@@ -1,0 +1,8 @@
+String url = "jdbc:mysql://localhost/test";
+Class.forName ("com.mysql.jdbc.Driver").newInstance ();
+Connection conn = DriverManager.getConnection (url, "username", "password");
+shareedit
+answered Sep 22 '09 at 1:39
+
+Langali
+1,38111939
