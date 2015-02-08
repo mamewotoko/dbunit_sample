@@ -18,7 +18,7 @@ public class MySQLJDBCSample {
 	    Connection conn = DriverManager.getConnection (url, "root", "password");
 	    String query = "select * from names";
 	    stmt = conn.createStatement();
-	    stmt.executeUpdate("create table names (name text(1024))");
+	    stmt.executeUpdate("create table if not exists names (name text(1024))");
 	    stmt.executeUpdate("insert into names values ('hello')");
 	    ResultSet result = stmt.executeQuery(query);
 	    while(result.next()){
