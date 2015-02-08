@@ -10,6 +10,8 @@
   <path id="dbutil_sample.classpath">
     <pathelement path="lib/hamcrest-core-1.3.jar"/>
     <pathelement path="lib/junit-4.12.jar"/>
+    <pathelement path="lib/mysql-connector-java-5.0.8-bin.jar"/>
+    <pathelement path="lib/dbunit-2.4.9.jar"/>
     <pathelement path="${build}"/>
   </path>
 
@@ -42,6 +44,13 @@
       <test name="com.mamewo.sample.dbutil.TestDB" />
       <classpath refid="dbutil_sample.classpath"/>
     </junit>
+  </target>
+
+  <target name="runjdbc">
+    <java classname="com.mamewo.sample.jdbc.MySQLJDBCSample" fork="yes">
+      <jvmarg value="-DHOST=192.168.59.103" /> 
+      <classpath refid="dbutil_sample.classpath"/>
+    </java>
   </target>
 
   <target name="clean"
